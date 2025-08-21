@@ -17,7 +17,7 @@ def get_vid(id):
     res = download_youtube_video(video_url)
     # return {"message": res.get("id")}
     return FileResponse(
-        path=f"downloads/{res.get('id')}.mp4",
+        path=f"downloads/{res}.mp4",
         media_type="video/mp4",
-        filename=f"{res.get('title')}.mp4"  # suggest a nice download name
+        filename=f"{res}.mp4"  # suggest a nice download name
     )
