@@ -15,9 +15,9 @@ def welcome():
 def get_vid(id):
     video_url = f"https://youtu.be/{id}"
     res = download_youtube_video(video_url)
-    # return {"message": res.get("id")}
-    return FileResponse(
-        path=f"downloads/{res}.mp4",
-        media_type="video/mp4",
-        filename=f"{res}.mp4"  # suggest a nice download name
-    )
+    return {"message": res.get("id")}
+    # return FileResponse(
+    #     path=f"downloads/{res}.mp4",
+    #     media_type="video/mp4",
+    #     filename=f"{res}.mp4"  # suggest a nice download name
+    # )
