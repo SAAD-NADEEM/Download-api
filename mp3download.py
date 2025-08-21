@@ -59,7 +59,7 @@ def download_youtube_video(video_url, save_path="downloads"):
 
             # Actual download
             ydl.download([video_url])
-            return {"id": info_dict.get('title')}
+            return {"id":info_dict.get("title")}
 
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] Video downloaded successfully to: {save_path}"
