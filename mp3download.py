@@ -40,6 +40,7 @@ def download_youtube_video(video_url, save_path="downloads"):
             "throttledratelimit": 1000000,
             # Cookies file if available (can help with age-restricted videos)
             # "cookiefile": "cookies.txt" if os.path.exists("cookies.txt") else None,
+            # "cookiefile": "cookies.txt" if os.path.exists("cookies.txt") else None,
             "extractor_args": {
                 "youtube": {
                     "player_client": [
