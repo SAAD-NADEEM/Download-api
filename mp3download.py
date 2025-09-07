@@ -1,5 +1,6 @@
 import yt_dlp
 from datetime import datetime
+import os
 
 
 def download_youtube_video(video_url):
@@ -36,12 +37,12 @@ def download_youtube_video(video_url):
             # Throttle to avoid rate limiting
             "throttledratelimit": 1000000,
             # Cookies file if available (can help with age-restricted videos)
-            # "cookiefile": "cookies.txt" if os.path.exists("cookies.txt") else None,
+            "cookiefile": "cookies.txt" if os.path.exists("cookies.txt") else None,
             # "cookiefile": "cookies.txt" if os.path.exists("cookies.txt") else None,
             "extractor_args": {
                 "youtube": {
                     "player_client": [
-                        "android"
+                        "web"
                     ],  # Pretend to be the YouTube Android app
                 }
             },
