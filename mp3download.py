@@ -1,9 +1,8 @@
 import yt_dlp
-import os
 from datetime import datetime
 
 
-def download_youtube_video(video_url, save_path="downloads"):
+def download_youtube_video(video_url):
     """
     Downloads a YouTube video with enhanced error handling and bypass techniques.
 
@@ -13,12 +12,10 @@ def download_youtube_video(video_url, save_path="downloads"):
     """
     try:
         # Create save directory if it doesn't exist
-        os.makedirs(save_path, exist_ok=True)
 
         # Enhanced options for yt-dlp with bypass techniques
         ydl_opts = {
             "format": "bestvideo+bestaudio/best",
-            "outtmpl": f"{save_path}/%(title)s.%(ext)s",
             "merge_output_format": "mp4",
             # Bypass techniques
             "extract_flat": False,
@@ -59,7 +56,7 @@ def download_youtube_video(video_url, save_path="downloads"):
             print(f"Downloading: {info_dict.get('title', 'Unknown Title')}")
 
             # Actual download
-            ydl.download([video_url])
+           
             return info_dict.get("title")
 
         print(
